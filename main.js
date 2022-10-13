@@ -1,17 +1,20 @@
-var obj = {
-    num : 2
+// let multiply = function(x,y){
+//     console.log(x*y);
+// }
+
+let multiply = function (x){
+    return function(y){
+        console.log(x*y);
+    }
 }
-var addToThis = function(a,b){
-     return this.num +a +b;
-}
 
-var arr  =[5,6]
-var a = addToThis.apply(obj ,arr);
-// var a = addToThis.call(obj,5,6);
-console.log(a);
 
-var bound = addToThis.bind(obj);
 
-var b = bound(5,6);
 
-console.log(b);
+let multiplyByTwo = multiply(2);
+
+multiplyByTwo(3);
+
+let multiplyByThree = multiply(3)
+
+multiplyByThree(12);
